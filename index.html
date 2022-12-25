@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>TO RUI</title>
+</head>
+
+<body>
+  <section class="showcase">
+    <header>
+      <!-- 圣诞老人 点击刷新页面 -->
+      <div class="logo">
+        <img id="snowman" src="assets/snowman.png" />
+      </div>
+      <script>
+        const image = document.getElementById('snowman');
+        image.addEventListener('click', () => {
+          location.reload();
+        });
+      </script>
+
+      <!-- 铃铛图标 点击播放音乐-->
+      <button id="toggle"></button>
+      <script>
+        const button = document.getElementById('toggle');
+        const audio = new Audio('assets/dj.mp3');
+
+        button.addEventListener('click', () => {
+          if (audio.paused) {
+            audio.play();
+            button.classList.remove('paused');
+          } else {
+            audio.pause();
+            button.classList.add('paused');
+          }
+        });
+      </script>
+
+    </header>
+
+    <!-- 视频背景 -->
+    <video src="assets/sds.mp4" muted loop autoplay></video>
+
+    <!-- 色彩蒙版 -->
+    <div class="overlay"></div>
+
+    <!-- 文本文字 -->
+    <div class="text">
+      <h2>Christmas</h2>
+      <h3>Clean the chimney</h3>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum, odio. Vel quis accusantium quia magnam
+        nostrum nulla voluptatum aspernatur debitis!</p>
+      <a href="#">Good Luck!</a>
+    </div>
+
+    <!-- 装饰图标 -->
+    <ul class="decorate">
+      <li><a href="#"><img src="assets/snowhouse.png" alt=""></a></li>
+      <li><a href="#"><img src="assets/gift.png" alt=""></a></li>
+      <li><a href="#"><img src="assets/socks.png" alt=""></a></li>
+    </ul>
+
+  </section>
+
+</body>
+
+</html>
